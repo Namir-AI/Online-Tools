@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert images between BMP, JPG, PNG, and WebP formats effortlessly.">
+    <meta name="keywords" content="image converter, BMP to JPG, PNG to WebP, image format converter">
+    <meta name="author" content="Your Name">
+    <title>Image Converter - Online Tools</title>
+    <link rel="stylesheet" href="image-converter.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#tools">Tools</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Image Converter</h1>
+        <p>Convert images between BMP, JPG, PNG, and WebP formats effortlessly.</p>
+    </header>
+
+    <!-- Ad Space Above Tool -->
+    <div class="ad-top">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
+        <!-- Ad Unit -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Left Ad Space -->
+        <div class="ad-left">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
+            <!-- Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Image Converter Tool -->
+        <section class="tool-section">
+            <div class="tool-container">
+                <h2>Upload Your Image</h2>
+                <form id="image-converter-form">
+                    <input type="file" id="image-upload" accept=".bmp, .jpg, .jpeg, .png, .webp" required>
+                    <label for="image-upload" class="btn">Choose Image</label>
+                    <select id="output-format" required>
+                        <option value="jpg">JPG</option>
+                        <option value="png">PNG</option>
+                        <option value="bmp">BMP</option>
+                        <option value="webp">WebP</option>
+                    </select>
+                    <button type="submit" class="btn">Convert Image</button>
+                </form>
+                <div id="output-section" class="hidden">
+                    <h3>Download Your Converted Image</h3>
+                    <a id="download-link" class="btn">Download</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Ad Space -->
+        <div class="ad-right">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
+            <!-- Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Online Tools. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:support@onlinetools.com">support@onlinetools.com</a></p>
+    </footer>
+
+    <!-- JavaScript for Image Conversion -->
+    <script>
+        document.getElementById('image-converter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const fileInput = document.getElementById('image-upload');
+            const outputFormat = document.getElementById('output-format').value;
+            const outputSection = document.getElementById('output-section');
+            const downloadLink = document.getElementById('download-link');
+
+            if (fileInput.files.length === 0) {
+                alert('Please upload an image.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+                const img = new Image();
+                img.src = event.target.result;
+
+                img.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+
+                    canvas.toBlob(function (blob) {
+                        const url = URL.createObjectURL(blob);
+                        downloadLink.href = url;
+                        downloadLink.download = `converted-image.${outputFormat}`;
+                        outputSection.classList.remove('hidden');
+                    }, `image/${outputFormat}`, 1.0);
+                };
+            };
+
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+</html>

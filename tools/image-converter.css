@@ -1,0 +1,103 @@
+/* Tool Section */
+.tool-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.tool-container {
+    background: #112240; /* Navy blue */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    max-width: 500px;
+    width: 100%;
+}
+
+.tool-container h2 {
+    color: #64ffda; /* Teal text */
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+#image-converter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#image-upload {
+    display: none; /* Hide default file input */
+}
+
+#image-converter-form label {
+    background: #64ffda; /* Teal button */
+    color: #0a192f; /* Deep blue text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#image-converter-form label:hover {
+    background: #52d1b2; /* Darker teal on hover */
+    box-shadow: 0 0 10px #64ffda; /* Glowing effect */
+}
+
+#output-format {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #64ffda; /* Teal border */
+    background: #0a192f; /* Deep blue background */
+    color: #ffffff; /* White text */
+    font-size: 1rem;
+}
+
+/* Output Section */
+#output-section {
+    margin-top: 20px;
+}
+
+#output-section.hidden {
+    display: none;
+}
+
+#output-section h3 {
+    color: #64ffda; /* Teal text */
+    margin-bottom: 10px;
+}
+
+/* Ad Spaces */
+.ad-top {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.ad-left, .ad-right {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px; /* Fixed width for side ads */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.ad-left {
+    left: 10px;
+}
+
+.ad-right {
+    right: 10px;
+}
+
+/* Main Content Layout */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+}

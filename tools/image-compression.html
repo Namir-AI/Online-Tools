@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compress images online with adjustable compression levels.">
+    <meta name="keywords" content="image compression, compress images, online tools">
+    <meta name="author" content="Your Name">
+    <title>Image Compression Tool</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="image-compression.css">
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression/dist/browser-image-compression.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Image Compression Tool</h1>
+        <p>Compress your images with ease.</p>
+    </header>
+
+    <!-- Slim Ad Space at the Top -->
+    <div class="ad-slim">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
+        <!-- Ad Unit -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Left Side Ad Space -->
+        <div class="ad-left">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
+            <!-- Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Tool Section -->
+        <section class="tool-section">
+            <div class="tool-card">
+                <!-- Custom File Input -->
+                <div class="file-input-container">
+                    <label for="compress-input" class="btn file-input-label">
+                        Choose File
+                        <input type="file" id="compress-input" accept="image/*" class="file-input">
+                    </label>
+                    <span id="file-name" class="file-name">No file chosen</span>
+                </div>
+
+                <!-- Upload Button -->
+                <button id="upload-btn" class="btn" style="display: none;">Upload</button>
+
+                <!-- Progress Bar -->
+                <div id="progress-container" class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+
+                <label for="compression-level" class="input-label">Compression Level:</label>
+                <select id="compression-level" class="select-input">
+                    <option value="1">Low Compression</option>
+                    <option value="0.5">Medium Compression</option>
+                    <option value="0.1">High Compression</option>
+                </select>
+                <button id="compress-btn" class="btn">Compress Image</button>
+                <div id="compressed-output" class="output-container"></div>
+            </div>
+        </section>
+
+        <!-- Right Side Ad Space -->
+        <div class="ad-right">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
+            <!-- Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2023 Online Tools. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:support@onlinetools.com">support@onlinetools.com</a></p>
+    </footer>
+
+    <script src="image-compression.js"></script>
+</body>
+</html>
